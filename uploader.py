@@ -11,11 +11,11 @@ SCOPES = ['https://www.googleapis.com/auth/drive.file']
 def authenticate_google_drive():
     """Authenticate and return Google Drive service."""
     creds = None
-    # Check if token.json exists (saved credentials)
+  
     if os.path.exists('token.json'):
         creds = Credentials.from_authorized_user_file('token.json', SCOPES)
 
-    # If no valid credentials, trigger OAuth flow
+ 
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
@@ -23,11 +23,11 @@ def authenticate_google_drive():
             flow = InstalledAppFlow.from_client_secrets_file(
                 'credentials.json', SCOPES)
             creds = flow.run_local_server(port=0)
-        # Save credentials for future use
+     
         with open('token.json', 'w') as token:
             token.write(creds.to_json())
 
-    # Return the authenticated Drive service
+ 
     return build('drive', 'v3', credentials=creds)
 
 def file_upload(file_path):
@@ -44,7 +44,7 @@ def file_upload(file_path):
 
 
 if __name__ == '__main__':
-    file_to_upload = 'mml-book.pdf'  # Change this to your file name
+    file_to_upload = 'mml-book.pdf'  
     if os.path.exists(file_to_upload):
         file_upload(file_to_upload)
     else:

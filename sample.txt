@@ -1,0 +1,35 @@
+Project Name: Google Drive Uploader
+
+Description:
+This is a Python-based automation tool that allows users to authenticate with Google Drive via OAuth 2.0 and upload files in bulk. It is designed for efficient file management and personal cloud storage automation.
+
+Core Features:
+- Google OAuth 2.0 Authentication (token caching supported)
+- Upload individual files to Google Drive
+- Bulk upload all files from a specified local folder
+- Clean and modular code structure for easy extension
+
+Setup Requirements:
+- Python 3.x
+- Google API Client Libraries:
+  - google-auth
+  - google-auth-oauthlib
+  - google-api-python-client
+- Google Cloud Project with OAuth Credentials (Desktop App type)
+
+Important Notes:
+- Files like `token.json` and `credentials.json` are intentionally excluded from this project for security.
+- The `.gitignore` file ensures sensitive files are not committed to version control.
+- Only sample files for testing purposes are included in the repository.
+
+Repository Branch: master
+
+Status: Core Functionality Complete 
+
+Usage:
+1. Place files to upload inside the specified folder (e.g., 'upload_files').
+2. Run the script to authenticate and automatically upload files to Google Drive.
+
+Author: ARYAN RAJ 
+Date: 12-07-2025
+
